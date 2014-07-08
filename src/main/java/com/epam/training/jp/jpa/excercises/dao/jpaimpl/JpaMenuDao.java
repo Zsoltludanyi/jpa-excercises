@@ -11,14 +11,17 @@ public class JpaMenuDao extends GenericJpaDao implements MenuDao {
 	@Override
 	public List<Menu> getActualMenus() {
 		//TODO: implement, use JPQL query
-		throw new UnsupportedOperationException();
+		return entityManager.createQuery("SELECT E FROM Menu E",Menu.class).getResultList();
+		
+		//throw new UnsupportedOperationException();
 
 	}
 
 	@Override
 	public Food findFoodById(int foodId) {
 		//TODO: implement
-		throw new UnsupportedOperationException();
+		return entityManager.find(Food.class, foodId);
+		//throw new UnsupportedOperationException();
 
 	}
 

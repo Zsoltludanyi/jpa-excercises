@@ -39,20 +39,25 @@ public class OrderService {
 	@Transactional(readOnly = true)
 	public List<Menu> getActualMenus() {
 		//TODO: implement
-		throw new UnsupportedOperationException();
+		return menuDao.getActualMenus();
+		//throw new UnsupportedOperationException();
 
 	}
 
 	public Food findFoodById(int foodId) {
 		//TODO: implement
-		throw new UnsupportedOperationException();
+		return menuDao.findFoodById(foodId);
+		//throw new UnsupportedOperationException();
 
 	}
 	
 	@Transactional
 	public int submitOrder(ShoppingCart shopingCart){
 		//TODO: implement, save all the related data
-		throw new UnsupportedOperationException();
+		FoodOrder fo = shopingCart.build();
+		foodOrderDao.save(fo);
+		return fo.getId();
+		//throw new UnsupportedOperationException();
 
 		
 	}

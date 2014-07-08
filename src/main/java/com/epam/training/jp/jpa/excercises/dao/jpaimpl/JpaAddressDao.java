@@ -8,7 +8,8 @@ public class JpaAddressDao extends GenericJpaDao implements AddressDao {
 	@Override
 	public void save(Address address) {
 		//TODO: implement
-		throw new UnsupportedOperationException();
+		entityManager.persist(address);
+		//throw new UnsupportedOperationException();
 
 	}
 }
